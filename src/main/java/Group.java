@@ -1,16 +1,9 @@
-public class Group{
-    private String name;
-    private Messanges lastMessenge;
+public class Group extends Chat{
     private int countUsers;
 
 
-    public Group(String name, Messanges lastMessenge, int countUsers) {
-        this.name = name;
-        this.lastMessenge = lastMessenge;
+    public Group(int countUsers) {
+        super();
         this.countUsers = countUsers;
-    }
-
-    public String toString() {
-        return "Group " + name + "\n" + lastMessenge + "\n" + "User counts = " + countUsers;
     }
 }
