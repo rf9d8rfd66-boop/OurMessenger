@@ -1,36 +1,21 @@
-public class Messages {
-    private String text;
-    private String time;
-    private Users user;
-    private Chat toChat;
-    private Messages[] all_messages = new Messages[100];
+public class Main {
+    public static void main(String[] args) {
+        Kanal kanal1 = new Kanal("Azali_xz", 21);
+        Group group1 = new Group("Группа 501", 29);
+        Users juliya = new Users("Юлия");
+        Users taliya = new Users("Талия");
+        Users aza = new Users("Азалия");
+        Messages message1 = new Messages("Hello", group1, "11:32", juliya);
+        Messages message2 = new Messages("How are you", group1, "11:33", juliya);
+        Messages message3 = new Messages("I am fine", group1, "11:56", taliya);
+        Messages message4 = new Messages("Всем привет, это мой канал", kanal1, "18:01", aza);
 
-    public Messages(String text, Chat toChat, String time, Users user) {
-        this.text = text;
-        this.toChat = toChat;
-        this.time = time;
-        this.user =  user;
-        send_messages(text, toChat, time, user);
-    }
+        Messages.printMessages();
 
-    public void send_messages(String text, Chat toChat, String time, Users user) {
-        Messages message = new Messages(text, toChat, time, user);
-        for (int i = 0; i <= 100; i++) {
-            if (all_messages[i] == null) {
-                all_messages[i] = message;
-                break;
-            }
-        }
-    }
-    public static void printMessages() {
-        for (int i = 0; i <= 100; i++) {
-            if (all_messages[i] != null) {
-                System.out.println(all_messages[i]);
-            }
-            else {
-                break;
-            }
-        }
+
+
+
+
     }
 
 }
